@@ -69,6 +69,11 @@ Downloads the image from the given public URL, applies filters (resize, greyscal
 **Response Example:**
 The response is the filtered image itself. For example, opening the URL in a browser will show the processed image, or using curl will save it locally.
 
+# Local Test
+- start the server using : npm start
+  - server starts running on : https://localhost:8082
+- use below examples to see the filtered images
+
 # Example
 - **Curl Example:**
 curl "http://localhost:8082/filteredimage?image_url=https://webneel.com/wallpaper/sites/default/files/images/07-2013/6%20lamborghini%20car%20wallpaper.jpg" --output output.jpg
@@ -77,7 +82,11 @@ curl "http://localhost:8082/filteredimage?image_url=https://webneel.com/wallpape
 http://localhost:8082/filteredimage?image_url=https://via.placeholder.com/300.jpg
 
 # Deployment
-Deployed on AWS Elastic Beanstalk:
-http://my-env.eba-bij2ghb7.us-east-1.elasticbeanstalk.com/filteredimage?image_url=<PUBLIC_IMAGE_URL>
+- eb init 
+- eb create my-env
+- eb status (gives the status of application)
+- eb deploy
+- Once Deployed on AWS Elastic Beanstalk, we can access the end point using: 
+http://<your-ebs-domain>/filteredimage?image_url=<PUBLIC_IMAGE_URL>
 
 - for example : http://my-env.eba-bij2ghb7.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://webneel.com/wallpaper/sites/default/files/images/07-2013/6%20lamborghini%20car%20wallpaper.jpg
